@@ -11,7 +11,7 @@ import org.testng.annotations.BeforeMethod;
 
 import java.util.logging.Logger;
 
-public class BaseTest {
+public abstract class BaseTest {
     private WebDriver webDriver;
 
     private final String BASE_URL = "https://practis.co.il/automation/";
