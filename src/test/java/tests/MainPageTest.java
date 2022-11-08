@@ -18,40 +18,40 @@ public class MainPageTest extends BaseTest {
         mainPage = loginPage.clickOnButtonLogin();
     }
 
-//    @Test(priority = 1)
-//    public void verifyDoButtons() {
-//        SoftAssert softAssert = new SoftAssert();
-//
-//        softAssert.assertTrue(mainPage.doButtonsPage.isButtonDO2IsDisabled());
-//        softAssert.assertFalse(mainPage.doButtonsPage.isButtonDO1IsDisabled());
-//        mainPage.doButtonsPage.clickOnButtonDO1();
-//
-//        softAssert.assertFalse(mainPage.doButtonsPage.isButtonDO2IsDisabled());
-//        softAssert.assertTrue(mainPage.doButtonsPage.isButtonDO1IsDisabled());
-//        mainPage.doButtonsPage.clickOnButtonDO2();
-//
-//        softAssert.assertTrue(mainPage.doButtonsPage.isButtonDO2IsDisabled());
-//        softAssert.assertFalse(mainPage.doButtonsPage.isButtonDO1IsDisabled());
-//
-//        softAssert.assertAll();
-//    }
-//
-//    @Test(priority = 2)
-//    public void verifyChangeFontSizeArrows() {
-//        SoftAssert softAssert = new SoftAssert();
-//        final String FONT_SIZE_DEFAULT = "20";
-//        final String FONT_SIZE_INCREASED = "23";
-//
-//        softAssert.assertTrue(mainPage.fontSizePage.isFontSizeCorrect(FONT_SIZE_DEFAULT));
-//
-//        mainPage.fontSizePage.clickOnButtonIncrease();
-//        softAssert.assertTrue(mainPage.fontSizePage.isFontSizeCorrect(FONT_SIZE_INCREASED));
-//
-//        mainPage.fontSizePage.clickOnButtonDecrease();
-//        softAssert.assertTrue(mainPage.fontSizePage.isFontSizeCorrect(FONT_SIZE_DEFAULT));
-//
-//        softAssert.assertAll();
-//    }
+    @Test(priority = 1)
+    public void verifyDoButtons() {
+        SoftAssert softAssert = new SoftAssert();
+
+        softAssert.assertTrue(mainPage.doButtonsPage.isButtonDO2IsDisabled());
+        softAssert.assertFalse(mainPage.doButtonsPage.isButtonDO1IsDisabled());
+        mainPage.doButtonsPage.clickOnButtonDO1();
+
+        softAssert.assertFalse(mainPage.doButtonsPage.isButtonDO2IsDisabled());
+        softAssert.assertTrue(mainPage.doButtonsPage.isButtonDO1IsDisabled());
+        mainPage.doButtonsPage.clickOnButtonDO2();
+
+        softAssert.assertTrue(mainPage.doButtonsPage.isButtonDO2IsDisabled());
+        softAssert.assertFalse(mainPage.doButtonsPage.isButtonDO1IsDisabled());
+
+        softAssert.assertAll();
+    }
+
+    @Test(priority = 2)
+    public void verifyChangeFontSizeArrows() {
+        SoftAssert softAssert = new SoftAssert();
+        final String FONT_SIZE_DEFAULT = "20";
+        final String FONT_SIZE_INCREASED = "23";
+
+        softAssert.assertTrue(mainPage.fontSizePage.isFontSizeCorrect(FONT_SIZE_DEFAULT));
+
+        mainPage.fontSizePage.clickOnButtonIncrease();
+        softAssert.assertTrue(mainPage.fontSizePage.isFontSizeCorrect(FONT_SIZE_INCREASED));
+
+        mainPage.fontSizePage.clickOnButtonDecrease();
+        softAssert.assertTrue(mainPage.fontSizePage.isFontSizeCorrect(FONT_SIZE_DEFAULT));
+
+        softAssert.assertAll();
+    }
 
     @Test(priority = 3)
     public void verifySetBackgroundColorButton() {
