@@ -100,6 +100,7 @@ public class MainPage extends BasePage {
 
         public BackgroundColorPage setInputBackgroundColor(String backgroundColor) {
             logger.info("Setting background color: " + backgroundColor);
+            inputBackgroundColor.clear();
             inputBackgroundColor.sendKeys(backgroundColor);
             return this;
         }
@@ -110,8 +111,9 @@ public class MainPage extends BasePage {
             return this;
         }
 
-        public boolean isBackgroundColorCorrect(String backgroundColor) {
-            return formToColorize.getAttribute("style").equals("background: " + backgroundColor + ";");
+        public boolean isBackgroundColorCorrect(String expectedBackgroundColor) {
+            logger.info("Checking background color is set correctly");
+            return formToColorize.getAttribute("style").equals("background: " + expectedBackgroundColor + ";");
         }
     }
 }
