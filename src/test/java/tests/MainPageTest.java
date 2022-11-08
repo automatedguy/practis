@@ -22,14 +22,17 @@ public class MainPageTest extends BaseTest {
     public void verifyDoButtons() {
         SoftAssert softAssert = new SoftAssert();
 
+        // Assert buttons default state
         softAssert.assertTrue(mainPage.doButtonsPage.isButtonDO2IsDisabled());
         softAssert.assertFalse(mainPage.doButtonsPage.isButtonDO1IsDisabled());
-        mainPage.doButtonsPage.clickOnButtonDO1();
 
+        // Click on button DO1 and assert new status
+        mainPage.doButtonsPage.clickOnButtonDO1();
         softAssert.assertFalse(mainPage.doButtonsPage.isButtonDO2IsDisabled());
         softAssert.assertTrue(mainPage.doButtonsPage.isButtonDO1IsDisabled());
-        mainPage.doButtonsPage.clickOnButtonDO2();
 
+        // Click on button DO2 and assert status is back to default
+        mainPage.doButtonsPage.clickOnButtonDO2();
         softAssert.assertTrue(mainPage.doButtonsPage.isButtonDO2IsDisabled());
         softAssert.assertFalse(mainPage.doButtonsPage.isButtonDO1IsDisabled());
 
@@ -42,11 +45,14 @@ public class MainPageTest extends BaseTest {
         final String FONT_SIZE_DEFAULT = "20";
         final String FONT_SIZE_INCREASED = "23";
 
+        // Assert default font size
         softAssert.assertTrue(mainPage.fontSizePage.isFontSizeCorrect(FONT_SIZE_DEFAULT));
 
+        // Click on increase size button and assert font size increased
         mainPage.fontSizePage.clickOnButtonIncrease();
         softAssert.assertTrue(mainPage.fontSizePage.isFontSizeCorrect(FONT_SIZE_INCREASED));
 
+        // Click on decrease size button and assert font size decreased
         mainPage.fontSizePage.clickOnButtonDecrease();
         softAssert.assertTrue(mainPage.fontSizePage.isFontSizeCorrect(FONT_SIZE_DEFAULT));
 
@@ -59,10 +65,12 @@ public class MainPageTest extends BaseTest {
         final String BACKGROUND_COLOR_GREEN = "green";
         final String BACKGROUND_COLOR_BLACK = "black";
 
+        // Set background color to green and assert the change
         mainPage.backgroundColorPage.setInputBackgroundColor(BACKGROUND_COLOR_GREEN);
         mainPage.backgroundColorPage.clickOnButtonSetBackgroundColor();
         softAssert.assertTrue(mainPage.backgroundColorPage.isBackgroundColorCorrect(BACKGROUND_COLOR_GREEN));
 
+        // // Set background color to black and assert the change
         mainPage.backgroundColorPage.setInputBackgroundColor(BACKGROUND_COLOR_BLACK);
         mainPage.backgroundColorPage.clickOnButtonSetBackgroundColor();
         softAssert.assertTrue(mainPage.backgroundColorPage.isBackgroundColorCorrect(BACKGROUND_COLOR_BLACK));
