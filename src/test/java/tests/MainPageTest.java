@@ -49,12 +49,24 @@ public class MainPageTest extends BaseTest {
 
         mainPage.fontSizePage.clickOnButtonDecrease();
         softAssert.assertTrue(mainPage.fontSizePage.isFontSizeCorrect(FONT_SIZE_DEFAULT));
+
+        softAssert.assertAll();
     }
 
     @Test(priority = 3)
     public void verifySetBackgroundColorButton() {
-        final String backgroundColor = "black";
-        mainPage.backgroundColorPage.setInputBackgroundColor(backgroundColor);
+        SoftAssert softAssert = new SoftAssert();
+        final String BACKGROUND_COLOR_GREEN = "green";
+        final String BACKGROUND_COLOR_BLACK = "black";
+
+        mainPage.backgroundColorPage.setInputBackgroundColor(BACKGROUND_COLOR_GREEN);
         mainPage.backgroundColorPage.clickOnButtonSetBackgroundColor();
+        softAssert.assertTrue(mainPage.backgroundColorPage.isBackgroundColorCorrect(BACKGROUND_COLOR_GREEN));
+
+        mainPage.backgroundColorPage.setInputBackgroundColor(BACKGROUND_COLOR_BLACK);
+        mainPage.backgroundColorPage.clickOnButtonSetBackgroundColor();
+        softAssert.assertTrue(mainPage.backgroundColorPage.isBackgroundColorCorrect(BACKGROUND_COLOR_BLACK));
+
+        softAssert.assertAll();
     }
 }

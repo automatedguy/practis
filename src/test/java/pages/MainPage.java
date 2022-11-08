@@ -81,7 +81,7 @@ public class MainPage extends BasePage {
 
         public boolean isFontSizeCorrect(String expectedFontSize) {
             logger.info("Getting current font size");
-            return textFontSize.getAttribute("style").equals("ont-size: " + expectedFontSize + "px;");
+            return textFontSize.getAttribute("style").equals("font-size: " + expectedFontSize + "px;");
         }
     }
 
@@ -90,6 +90,8 @@ public class MainPage extends BasePage {
         WebElement inputBackgroundColor;
         @FindBy(id = "btnSetBgColor")
         WebElement buttonSetBackgroundColor;
+        @FindBy(id = "formToColorize")
+        WebElement formToColorize;
 
         public BackgroundColorPage(WebDriver webDriver) {
             super(webDriver);
@@ -106,6 +108,10 @@ public class MainPage extends BasePage {
             logger.info("Clicking on set background color button");
             buttonSetBackgroundColor.click();
             return this;
+        }
+
+        public boolean isBackgroundColorCorrect(String backgroundColor) {
+            return formToColorize.getAttribute("style").equals("background: " + backgroundColor + ";");
         }
     }
 }
