@@ -5,6 +5,7 @@ import org.checkerframework.checker.units.qual.C;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -19,21 +20,20 @@ public abstract class BaseTest {
     private final Logger logger = Logger.getLogger("BaseTest");
 
     @BeforeClass
+    public void setUp() {
+        configureWebDriver();
+        startBrowser();
+        maximizeBrowser();
+    }
+
+    @AfterClass
+    public void tearDown() {
+        closeBrowser();
+    }
+
     public void configureWebDriver() {
         logger.info("Configuring web driver");
         WebDriverManager.chromedriver().setup();
-    }
-
-    @BeforeMethod
-    public void setUp() {
-        startBrowser();
-        maximizeBrowser();
-        openBaseUrl();
-    }
-
-    @AfterMethod
-    public void tearDown() {
-        closeBrowser();
     }
 
     public void startBrowser() {
