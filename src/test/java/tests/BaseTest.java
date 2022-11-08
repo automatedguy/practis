@@ -12,9 +12,11 @@ import org.testng.annotations.BeforeMethod;
 import java.util.logging.Logger;
 
 public class BaseTest {
-    WebDriver webDriver;
+    private WebDriver webDriver;
 
-    final private String BASE_URL = "https://practis.co.il/automation/";
+    private final String BASE_URL = "https://practis.co.il/automation/";
+    public final String USERNAME = "admin";
+    public final String PASSWORD = "admin";
     private final Logger logger = Logger.getLogger("BaseTest");
 
     @BeforeClass
@@ -54,5 +56,9 @@ public class BaseTest {
     public void closeBrowser() {
         logger.info("Closing browser");
         webDriver.close();
+    }
+
+    public WebDriver getWebDriver() {
+        return webDriver;
     }
 }
