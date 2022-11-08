@@ -10,6 +10,6 @@
 - mvn clean test
 
 ### Dependencies:
-- Selenium: Web driver libraries
+- Selenium: Web driver and related libraries
 - TestNG: annotations and asserts
 - Webdrivermanager: auto setup for chrome driver
