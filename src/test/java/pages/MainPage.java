@@ -24,6 +24,8 @@ public class MainPage extends BasePage {
         @FindBy(id = "do2")
         private WebElement buttonDO2;
 
+        final String BUTTON_DISABLED = "button disabled";
+
         public DoButtonsPage(WebDriver webDriver) {
             super(webDriver);
             PageFactory.initElements(webDriver, this);
@@ -35,10 +37,20 @@ public class MainPage extends BasePage {
             return this;
         }
 
+        public boolean isButtonDO1IsDisabled() {
+            logger.info("Checking if button DO1 is disabled");
+            return buttonDO1.getAttribute("class").equals(BUTTON_DISABLED);
+        }
+
         public DoButtonsPage clickOnButtonDO2() {
             logger.info("Clicking on button DO2");
             buttonDO2.click();
             return this;
+        }
+
+        public boolean isButtonDO2IsDisabled() {
+            logger.info("Checking if button DO2 is disabled");
+            return buttonDO2.getAttribute("class").equals(BUTTON_DISABLED);
         }
     }
 
