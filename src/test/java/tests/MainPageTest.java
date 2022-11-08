@@ -38,8 +38,17 @@ public class MainPageTest extends BaseTest {
 
     @Test(priority = 2)
     public void verifyChangeFontSizeArrows() {
+        SoftAssert softAssert = new SoftAssert();
+        final String FONT_SIZE_DEFAULT = "20";
+        final String FONT_SIZE_INCREASED = "23";
+
+        softAssert.assertTrue(mainPage.fontSizePage.isFontSizeCorrect(FONT_SIZE_DEFAULT));
+
         mainPage.fontSizePage.clickOnButtonIncrease();
+        softAssert.assertTrue(mainPage.fontSizePage.isFontSizeCorrect(FONT_SIZE_INCREASED));
+
         mainPage.fontSizePage.clickOnButtonDecrease();
+        softAssert.assertTrue(mainPage.fontSizePage.isFontSizeCorrect(FONT_SIZE_DEFAULT));
     }
 
     @Test(priority = 3)

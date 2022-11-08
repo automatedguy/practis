@@ -59,6 +59,8 @@ public class MainPage extends BasePage {
         private WebElement buttonIncreaseFont;
         @FindBy(id = "btnDecreaseFont")
         private WebElement buttonDecreaseFont;
+        @FindBy(id = "textFontSize")
+        private WebElement textFontSize;
 
         public FontSizePage(WebDriver webDriver) {
             super(webDriver);
@@ -75,6 +77,11 @@ public class MainPage extends BasePage {
             logger.info("Clicking on button decrease font size");
             buttonDecreaseFont.click();
             return this;
+        }
+
+        public boolean isFontSizeCorrect(String expectedFontSize) {
+            logger.info("Getting current font size");
+            return textFontSize.getAttribute("style").equals("ont-size: " + expectedFontSize + "px;");
         }
     }
 
