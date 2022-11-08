@@ -13,7 +13,6 @@ import java.util.logging.Logger;
 
 public abstract class BaseTest {
     private WebDriver webDriver;
-
     private final String BASE_URL = "https://practis.co.il/automation/";
     public final String USERNAME = "admin";
     public final String PASSWORD = "admin";

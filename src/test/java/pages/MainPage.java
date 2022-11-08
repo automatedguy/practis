@@ -6,37 +6,36 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class MainPage extends BasePage {
-    public DoPage doPage;
+    public DoButtonsPage doButtonsPage;
     public FontSizePage fontSizePage;
     public BackgroundColorPage backgroundColorPage;
 
     public MainPage(WebDriver webDriver) {
         super(webDriver);
         PageFactory.initElements(webDriver, this);
-        doPage = new DoPage(webDriver);
+        doButtonsPage = new DoButtonsPage(webDriver);
         fontSizePage = new FontSizePage(webDriver);
         backgroundColorPage = new BackgroundColorPage(webDriver);
     }
 
-    public class DoPage extends BasePage {
-        @FindBy(id="do1")
+    public class DoButtonsPage extends BasePage {
+        @FindBy(id = "do1")
         private WebElement buttonDO1;
-
-        @FindBy(id="do2")
+        @FindBy(id = "do2")
         private WebElement buttonDO2;
 
-        public DoPage(WebDriver webDriver) {
+        public DoButtonsPage(WebDriver webDriver) {
             super(webDriver);
             PageFactory.initElements(webDriver, this);
         }
 
-        public DoPage clickOnButtonDO1() {
+        public DoButtonsPage clickOnButtonDO1() {
             logger.info("Clicking on button DO1");
             buttonDO1.click();
             return this;
         }
 
-        public DoPage clickOnButtonDO2() {
+        public DoButtonsPage clickOnButtonDO2() {
             logger.info("Clicking on button DO2");
             buttonDO2.click();
             return this;
@@ -44,11 +43,9 @@ public class MainPage extends BasePage {
     }
 
     public class FontSizePage extends BasePage {
-
-        @FindBy(id="btnIncreaseFont")
+        @FindBy(id = "btnIncreaseFont")
         private WebElement buttonIncreaseFont;
-
-        @FindBy(id="btnDecreaseFont")
+        @FindBy(id = "btnDecreaseFont")
         private WebElement buttonDecreaseFont;
 
         public FontSizePage(WebDriver webDriver) {
@@ -70,11 +67,9 @@ public class MainPage extends BasePage {
     }
 
     public class BackgroundColorPage extends BasePage {
-
-        @FindBy(id="bgColor")
+        @FindBy(id = "bgColor")
         WebElement inputBackgroundColor;
-
-        @FindBy(id="btnSetBgColor")
+        @FindBy(id = "btnSetBgColor")
         WebElement buttonSetBackgroundColor;
 
         public BackgroundColorPage(WebDriver webDriver) {

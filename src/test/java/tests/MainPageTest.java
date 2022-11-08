@@ -7,6 +7,7 @@ import pages.MainPage;
 
 public class MainPageTest extends BaseTest {
     private MainPage mainPage;
+
     @BeforeMethod
     public void login() {
         LoginPage loginPage = new LoginPage(getWebDriver());
@@ -17,8 +18,8 @@ public class MainPageTest extends BaseTest {
 
     @Test
     public void verifyDoButtons() {
-        mainPage.doPage.clickOnButtonDO1();
-        mainPage.doPage.clickOnButtonDO2();
+        mainPage.doButtonsPage.clickOnButtonDO1();
+        mainPage.doButtonsPage.clickOnButtonDO2();
     }
 
     @Test
