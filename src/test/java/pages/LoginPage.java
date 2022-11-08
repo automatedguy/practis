@@ -6,7 +6,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage extends BasePage {
-    private WebDriver webDriver;
     @FindBy(name = "username")
     private WebElement inputUsername;
     @FindBy(name = "password")
@@ -17,7 +16,6 @@ public class LoginPage extends BasePage {
     public LoginPage(WebDriver webDriver) {
         super(webDriver);
         PageFactory.initElements(webDriver, this);
-        this.webDriver = webDriver;
     }
 
     public void setInputUsername(String username) {
@@ -33,6 +31,6 @@ public class LoginPage extends BasePage {
     public WebDriver clickOnButtonLogin() {
         logger.info("Clicking on login button");
         buttonLogin.click();
-        return this.webDriver;
+        return getWebDriver();
     }
 }

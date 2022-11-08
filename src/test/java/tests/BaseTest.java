@@ -6,6 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 
 import java.util.logging.Logger;
 
@@ -21,6 +22,11 @@ public abstract class BaseTest {
         configureWebDriver();
         startBrowser();
         maximizeBrowser();
+    }
+
+    @BeforeMethod
+    public void navigateToBaseURL() {
+        openBaseUrl();
     }
 
     @AfterClass

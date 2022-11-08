@@ -11,5 +11,9 @@ public abstract class BasePage {
     public BasePage(WebDriver webDriver) {
         this.webDriver = webDriver;
     }
+
+    public WebDriver getWebDriver() {
+        return this.webDriver;
+    }
 }
 

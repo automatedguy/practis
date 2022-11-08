@@ -11,7 +11,6 @@ public class MainPageTest extends BaseTest {
 
     @BeforeMethod
     public void login() {
-        openBaseUrl();
         LoginPage loginPage = new LoginPage(getWebDriver());
         loginPage.setInputUsername(USERNAME);
         loginPage.setInputPassword(PASSWORD);
