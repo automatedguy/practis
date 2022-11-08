@@ -12,7 +12,6 @@ public class MainPage extends BasePage {
 
     public MainPage(WebDriver webDriver) {
         super(webDriver);
-        PageFactory.initElements(webDriver, this);
         doButtonsPage = new DoButtonsPage(webDriver);
         fontSizePage = new FontSizePage(webDriver);
         backgroundColorPage = new BackgroundColorPage(webDriver);

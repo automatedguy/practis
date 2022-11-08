@@ -22,16 +22,16 @@ public class MainPageTest extends BaseTest {
     public void verifyDoButtons() {
         SoftAssert softAssert = new SoftAssert();
 
-        // Assert buttons default state
+        // Assert buttons default states
         softAssert.assertTrue(mainPage.doButtonsPage.isButtonDO2IsDisabled());
         softAssert.assertFalse(mainPage.doButtonsPage.isButtonDO1IsDisabled());
 
-        // Click on button DO1 and assert new status
+        // Click on button DO1 and assert buttons new state
         mainPage.doButtonsPage.clickOnButtonDO1();
         softAssert.assertFalse(mainPage.doButtonsPage.isButtonDO2IsDisabled());
         softAssert.assertTrue(mainPage.doButtonsPage.isButtonDO1IsDisabled());
 
-        // Click on button DO2 and assert status is back to default
+        // Click on button DO2 and assert buttons state is back to default
         mainPage.doButtonsPage.clickOnButtonDO2();
         softAssert.assertTrue(mainPage.doButtonsPage.isButtonDO2IsDisabled());
         softAssert.assertFalse(mainPage.doButtonsPage.isButtonDO1IsDisabled());
@@ -70,7 +70,7 @@ public class MainPageTest extends BaseTest {
         mainPage.backgroundColorPage.clickOnButtonSetBackgroundColor();
         softAssert.assertTrue(mainPage.backgroundColorPage.isBackgroundColorCorrect(BACKGROUND_COLOR_GREEN));
 
-        // // Set background color to black and assert the change
+        // Set background color to black and assert the change
         mainPage.backgroundColorPage.setInputBackgroundColor(BACKGROUND_COLOR_BLACK);
         mainPage.backgroundColorPage.clickOnButtonSetBackgroundColor();
         softAssert.assertTrue(mainPage.backgroundColorPage.isBackgroundColorCorrect(BACKGROUND_COLOR_BLACK));
