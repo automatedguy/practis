@@ -30,9 +30,9 @@ public class LoginPage extends BasePage {
         inputPassword.sendKeys(password);
     }
 
-    public MainPage clickOnButtonLogin() {
+    public WebDriver clickOnButtonLogin() {
         logger.info("Clicking on login button");
         buttonLogin.click();
-        return new MainPage(webDriver);
+        return this.webDriver;
     }
 }

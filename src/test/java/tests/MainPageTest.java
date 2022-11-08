@@ -15,7 +15,7 @@ public class MainPageTest extends BaseTest {
         LoginPage loginPage = new LoginPage(getWebDriver());
         loginPage.setInputUsername(USERNAME);
         loginPage.setInputPassword(PASSWORD);
-        mainPage = loginPage.clickOnButtonLogin();
+        mainPage = new MainPage(loginPage.clickOnButtonLogin());
     }
 
     @Test(priority = 1)

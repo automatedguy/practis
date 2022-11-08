@@ -30,10 +30,9 @@ public class MainPage extends BasePage {
             PageFactory.initElements(webDriver, this);
         }
 
-        public DoButtonsPage clickOnButtonDO1() {
+        public void clickOnButtonDO1() {
             logger.info("Clicking on button DO1");
             buttonDO1.click();
-            return this;
         }
 
         public boolean isButtonDO1IsDisabled() {
@@ -41,10 +40,9 @@ public class MainPage extends BasePage {
             return buttonDO1.getAttribute("class").equals(BUTTON_DISABLED);
         }
 
-        public DoButtonsPage clickOnButtonDO2() {
+        public void clickOnButtonDO2() {
             logger.info("Clicking on button DO2");
             buttonDO2.click();
-            return this;
         }
 
         public boolean isButtonDO2IsDisabled() {
@@ -66,16 +64,14 @@ public class MainPage extends BasePage {
             PageFactory.initElements(webDriver, this);
         }
 
-        public FontSizePage clickOnButtonIncrease() {
+        public void clickOnButtonIncrease() {
             logger.info("Clicking on button increase font size");
             buttonIncreaseFont.click();
-            return this;
         }
 
-        public FontSizePage clickOnButtonDecrease() {
+        public void clickOnButtonDecrease() {
             logger.info("Clicking on button decrease font size");
             buttonDecreaseFont.click();
-            return this;
         }
 
         public boolean isFontSizeCorrect(String expectedFontSize) {
@@ -97,17 +93,15 @@ public class MainPage extends BasePage {
             PageFactory.initElements(webDriver, this);
         }
 
-        public BackgroundColorPage setInputBackgroundColor(String backgroundColor) {
+        public void setInputBackgroundColor(String backgroundColor) {
             logger.info("Setting background color: " + backgroundColor);
             inputBackgroundColor.clear();
             inputBackgroundColor.sendKeys(backgroundColor);
-            return this;
         }
 
-        public BackgroundColorPage clickOnButtonSetBackgroundColor() {
+        public void clickOnButtonSetBackgroundColor() {
             logger.info("Clicking on set background color button");
             buttonSetBackgroundColor.click();
-            return this;
         }
 
         public boolean isBackgroundColorCorrect(String expectedBackgroundColor) {
